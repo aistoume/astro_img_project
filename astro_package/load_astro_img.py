@@ -2,6 +2,7 @@
 import os
 import numpy as np
 from astropy.io import fits #need to install the "astropy" package
+import copy
 
 class AstroImgs(object):
     _img_dir = ''
@@ -28,7 +29,8 @@ class AstroImgs(object):
         return True
     
     def GetImg(self):
-        return self._images
+        imgs = np.copy(self._images)
+        return imgs
 
 def main():
     print("Import Load Astro Image as main")

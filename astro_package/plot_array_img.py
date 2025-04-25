@@ -25,10 +25,10 @@ def SubplotImg(ax, img):
     colormap.set_bad(color='black') # set color for NaN value to black
     ax.imshow(img, origin = 'lower', cmap = colormap)
     
-def PlotConv2dKernels(kernels):
+def PlotConv2dKernels(kernels, m):
     kernel_size = len(kernels)
     for i in range(kernel_size):
-        k = kernels[i].reshape(3, 3)
+        k = kernels[i].reshape(m, m)
         print(k)
         print('sum =', sum(sum(k)))
         fig = plt.figure(figsize = (6, 4))
